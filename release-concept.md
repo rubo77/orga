@@ -1,5 +1,6 @@
 # Konzept zur Erstellung neuer Firmware-Releases
 
+
 ## Motivation
 Nach denn vergangen Vorfällen, die die eigentliche Entwicklung des Freifunk Netzes etwas verlangsamten 
 und einige Prozesse verlängerten,folgt nun eine Konzeption die dafür sorgen kann Updates und Features 
@@ -10,6 +11,8 @@ Welches denn Produktiv-, Entwicklungs- und Qualitätssicherungs-Prozess voneinan
 Nähers wird nachfolgend beschrieben.
 
 In unserem Fall werden die einzeln Prozesse wie folgt benannt und erläutert.
+
+
 ## Release Phasen
 1. Development
 2. Testing
@@ -32,7 +35,6 @@ Development-Branch in den Testing-Branch gemerged. Von nun an bleibt der Develop
 eingefroren bis die Neuerung in den Stable-Branch gemerged ist und wird nur für das nachträgliche einfügen von Bugfixes für die aktuelle Testing Variante genutzt.
 
 
-
 ### Testing
 Im Testing-Release werden die neuen Features aus dem Development-Release für eine kleine ausgewählte 
 Gruppe von produktiv verwendeten Knoten ausgerollt und getestet. Alle Fehler die hier auftreten 
@@ -48,6 +50,7 @@ Sollte ein Fehler im Testing-Branch auftreten, wird dieser im Development Branch
 Tritt er nicht erneut auf oder ist nicht reproduzierbar, wird der Bugfix in den Testing-Branch 
 gemerged. Die Testphase wird daraufhin auf mindestens 3 Tage nach dem zur Verfügung stellen des Builds verlängert. Hierdurch wird sichergestellt, dass der Bugfix keine größeren Fehler erzeugt und 
 falls doch, können diese noch in einer kleinen Testgruppe behoben werden.
+
 
 ### Stable
 Im Stable-Relase wird die Firmware für sämtliche Knoten verteilt, die keine eigene Firmware 
@@ -67,12 +70,29 @@ bis zu 3 Tage für die Testingbranch heruntergebrochen werden. Um dennoch sicher
 solches Update nicht im schlimmsten Fall doch zu größeren Problmen im Netz führt und somit das 
 gesamte Netz aus den Fugen bringt.
 
+
+## Fazit und Ziel
+Das gesamte Konzept zielt darauf ab den Bau, den Debugging-Prozess und die Verteilung der Firmware 
+in aktueller Version zu vereinfachen und zu verbessern. Hierfür stellt dieses Konzept sicher, dass 
+der aktuelle Stable-Release entweder gleich auf oder exakt ein Feature hinter dem Testing-Release 
+zurückliegt. 
+
+Das sorgt für Planbarkeit beim Einführen von neuen Features ebenso wie bei notwendigen Updates der 
+Firmware und des Backends.
+
+<!-- So können zum Beispiel auf einer kleineren Gruppe von Backend-Servern die Konfigurationen für 
+den Testing-Release laufen um gegebenenfalls auftretende Probleme zu entdecken und debuggen. Während 
+der Großteil Netzes über die Stable Gateways verfügt und dennoch nicht veraltet ist. -->
+
+
 ## Hinweise und Begriffsklärungen
 ### Branch
 Hierbei handelt es sich um einen Entwicklungsabschnitt innerhalb des Versionsverwaltungstool git.
 
+
 ### Release
 Hierbei handelt es sich um ein, aus dem entsprechenden Branch, kompiliertes Image für Freifunk-Router.
+
 
 ### ausgewählt
 Im Fall des Testing-Releases wird von einer ausgewählten Gruppe gesprochen. Hierbei handelt es sich nicht um eine administrativ ausgewählte Gruppe, sondern lediglich um eine Gruppe von Knoten die durch den Besitzer des selbigen zum Testen ausgewählt wurde. Niemand kann verbieten oder erzwingen, dass sich ein Knoten dieser Gruppe anschließt oder nicht. Es obliegt dem Inhaber/Besitzer des Knotens dies zu entscheiden.

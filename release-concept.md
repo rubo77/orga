@@ -55,6 +55,9 @@ verwenden oder sich in der Testing-Gruppe befinden und produktiv genutzt werden.
 Features in vollem Funktionsumfang getestet und als funktionierend eingestuft sein. 
 Hierdurch wird die Funktionstüchtigkeit dieses Releases sichergestellt.
 
+Sollten im Stable-Release Fehler gefunden werden, können diese ebenfalls im aktuellen Testing-Release gelöst werden. Hierzu werden die Änderungen im Development-Branch vorgenommen. Sollte der Development-Release eingefroren sein, werden die Änderungen wie Bugfixes für das neue Feature oder 
+Update gehandhabt. Ansonsten wird der Bugfix wie ein neues Feature mit erhöhter Priorität behandelt.
+
 
 ## Ausnahmeregelungen
 ### Sicherheitspatches
